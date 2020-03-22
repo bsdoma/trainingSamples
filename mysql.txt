@@ -1,0 +1,74 @@
+use javatraining;
+show tables;
+CREATE TABLE Employee (emp_id VARCHAR(20), emp_name VARCHAR(20),sex varchar(10),salary varchar(40));
+        
+insert into Employee values("101","Test","Female","70000");
+insert into Employee values("102","Test2","Male","70000");
+insert into Employee values("103","Test2","Male","70000");
+insert into Employee values("104","Test2","Male","70000");
+        
+select emp_name,count(*) from Employee group by emp_name having emp_name="Test";
+        
+drop table Employee;
+drop table Pet;
+        
+select * from Users;
+select * from User;
+drop table Users;
+        
+        
+CREATE TABLE Users (
+  id int unsigned NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL DEFAULT '',
+  email varchar(50) NOT NULL DEFAULT '',
+  country  varchar(50) DEFAULT 'USA',
+  password varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE User (
+  id int unsigned NOT NULL AUTO_INCREMENT,
+  first_name varchar(45) NOT NULL,
+  last_name varchar(45) NOT NULL,
+  username varchar(50) NOT NULL DEFAULT '',
+  email varchar(50) NOT NULL DEFAULT '',
+  password varchar(50) NOT NULL DEFAULT '',
+  regdate date NOT NULL,
+  PRIMARY KEY (id)
+) 
+
+DELIMITER //
+        CREATE PROCEDURE simpleproc (OUT count INT)
+          BEGIN
+              SELECT COUNT(*) INTO count FROM Employee;
+		  END
+          //
+DELIMITER ;
+
+use javatraining;
+DELIMITER //
+DROP PROCEDURE IF EXISTS SP_GETMESSAGE;
+CREATE PROCEDURE SP_GETMESSAGE()
+BEGIN
+DECLARE MESSAGE VARCHAR(100);
+SET MESSAGE="HELLO";
+SELECT CONCAT(MESSAGE,' ','MYSQL!!!!');
+END
+//
+DELIMITER ;
+
+call SP_GETMESSAGE();
+
+use javatraining;
+DELIMITER //
+CREATE PROCEDURE SP_GETMESSAGE()
+BEGIN
+DECLARE MESSAGE VARCHAR(100);
+SET MESSAGE="HELLO";
+SELECT CONCAT(MESSAGE,' ','MYSQL!!!!');
+END
+//
+DELIMITER ;
+
+call SP_GETMESSAGE();
+        
