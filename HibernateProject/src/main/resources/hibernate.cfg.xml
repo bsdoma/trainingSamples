@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"> 
+ 
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">bsdoma@05</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/javatraining2?serverTimezone=America/Chicago</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">false</property>
+        <property name="hbm2ddl.auto">create</property>
+         <mapping class="com.training.hibernate.model.Student"/>
+<!--         <mapping class="com.training.hibernate.associations.manyToMany.model.ReaderEntity"/> -->
+<!--         <mapping class="com.training.hibernate.associations.manyToMany.model.SubscriptionEntity"/> -->
+<!--         <mapping class="com.training.hibernate.associations.oneToOne.joinTable.OneAccountEntity"/> -->
+<!--         <mapping class="com.training.hibernate.associations.oneToOne.joinTable.OneEmployeeEntity"/> -->
+<!--         <mapping class="com.training.hibernate.associations.oneToMany.joinTable.AccountEntity"/> -->
+<!--         <mapping class="com.training.hibernate.associations.oneToMany.joinTable.EmployeeEntity"/> -->
+<!--         <mapping class="com.training.hibernate.orphanremoval.OrphanAccountEntity"/> -->
+<!--         <mapping class="com.training.hibernate.orphanremoval.OrphanEmployeeEntity"/> -->
+        
+    </session-factory>
+</hibernate-configuration>
