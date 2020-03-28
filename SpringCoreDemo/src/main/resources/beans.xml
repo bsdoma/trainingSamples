@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="employee1" class="com.test.springcore.Employee" >
+		<property name="id" value="101" />
+		<property name="name" value="Test111"/>
+		<property name="salary" value="20000"/>
+		
+	</bean>
+	
+	<bean id="employee2" class="com.test.springcore.Employee" lazy-init = "true" init-method="initMethod" destroy-method="destroyMethod">
+		<property name="id" value="102" />
+		<property name="name" value="Test2"/>
+		<property name="salary" value="20000"/>
+		
+	</bean>
+	
+	<bean id="address" class="com.test.springcore.di.Address">
+		<property name="city" value="Irving" />
+		<property name="state" value="Texas"/>
+		<property name="zipCode" value="75063"/>
+	</bean>
+	
+	<bean id="customer" class="com.test.springcore.di.Customer">
+		<property name="custId" value="1001" />
+		<property name="customerName" value="CustomerTest"/>
+		<constructor-arg name="address" ref="address"/>
+		
+	</bean>
+	
+	<bean id = "helloWorld" class = "com.test.springcore.scopes.HelloWorld" scope = "prototype">
+   </bean>
+	
+	
+	
+	
+	</beans>
