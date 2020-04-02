@@ -1,0 +1,51 @@
+JSON- Java script Object Notation
+
+XML- markup language
+
+
+
+<Employees>
+   <Employee>
+      <name>test1</name>
+      <email>test1@gmail.com</email>
+   </Employee>
+   
+   <Employee>
+      <name>test2</name>
+      <email>test2@gmail.com</email>
+   </Employee>
+   
+   <Employee>
+      <name>test3</name>
+      <email>test3@gmail.com</email>
+   </Employee>
+
+</Emplopyees>
+   
+   
+   Employees/Employee/Test1
+   
+   {
+     "employees":[
+         {
+           "name":"test1",
+           "email":"test1@gmail.com"
+         },
+         {
+           "name":"test2",
+           "email":"test2@gmail.com"
+         },
+         {
+           "name":"test3",
+           "email":"test3@gmail.com"
+         }
+     
+     ]
+   }
+   
+   public class Employee{
+    @JsonProperty
+     String name;
+     string email;
+   }
+   
