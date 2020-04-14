@@ -1,0 +1,40 @@
+ curl --location --request POST 'http://localhost:8080/api/auth/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"name":"mingyu",
+	"username":"mingyu",
+	"email":"mingyu.java@gmail.com",
+	"password":"secret"
+}'
+
+ curl --location --request POST 'http://localhost:8080/api/auth/signin' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"usernameOrEmail":"mingyu.java@gmail.com",
+	"password":"secret"
+}'
+
+ curl --location --request POST 'http://localhost:8080/api/polls' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTg2ODIxOTkyLCJleHAiOjE1ODc0MjY3OTJ9.nFc5FxxRrxMeF89IlGL_VdduOaxIQFiPrSt85_cUpe4F5kFEc2gvZWFuwF5-_rccK-Ty_EGMQzEpm9ZtC7b9kQ' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"question":"what is the best movie have you seen recently?",
+	"choices":[
+		  {
+		  	"text": "Ram1"
+		  },
+		  {
+		  	"text": "Ram2"
+		  },
+		  {
+		  	"text": "Ram3"
+		  },
+		  {
+		  	"text": "Ram4"
+		  }
+		],
+		"pollLength":{
+			"days":6,
+			"hours":12
+		}
+}'
